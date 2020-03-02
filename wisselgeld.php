@@ -22,19 +22,19 @@ try {
     }
 
     elseif ($argv[1] == ' ' || $argv[1] == '') {
-        throw new exception ('Je hebt geen bedrag meegegeven dat omgewisseld dient te worden');
+        throw new exception('Je hebt geen bedrag meegegeven dat omgewisseld dient te worden');
     }
 
     elseif (!is_numeric($argv[1])) {
-        throw new exception ('Je hebt geen geldig bedrag meegegeven');
+        throw new exception('Je hebt geen geldig bedrag meegegeven');
     }
 
     elseif ($argv[1] == 0) {
-        throw new exception ('Je hebt geen wisselgeld');
+        throw new exception('Je hebt geen wisselgeld');
     }
     
     elseif ($argv[1] <= -1) {
-        throw new exception ('Ik kan geen negatief bedrag wisselen');
+        throw new exception('Ik kan geen negatief bedrag wisselen');
     }
 
 } catch (exception $ex) {
