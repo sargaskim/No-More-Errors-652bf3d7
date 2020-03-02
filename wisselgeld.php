@@ -20,15 +20,19 @@ try {
 
         calculate($monnies, $input);
     }
+
     elseif ($argv[1] == ' ' || $argv[1] == '') {
         throw new exception ('Je hebt geen bedrag meegegeven dat omgewisseld dient te worden');
     }
+
     elseif (!is_numeric($argv[1])) {
         throw new exception ('Je hebt geen geldig bedrag meegegeven');
     }
+
     elseif ($argv[1] == 0) {
         throw new exception ('Je hebt geen wisselgeld');
     }
+    
     elseif ($argv[1] <= -1) {
         throw new exception ('Ik kan geen negatief bedrag wisselen');
     }
@@ -41,7 +45,7 @@ try {
 function calculate($monnies, $input) {
 
     foreach($monnies as $coin) {
-        if (floor($input / $coin) > 0){
+        if (floor($input / $coin) > 0) {
             $times = floor($input / $coin);
             echo "$times x €$coin".PHP_EOL;
             $input -= $times * $coin;
